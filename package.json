@@ -1,7 +1,7 @@
 {
-  "name": "rpi-ws281x",
-  "version": "1.0.27",
-  "description": "rpi-ws281x",
+  "name": "rpi-ws281x-v2",
+  "version": "1.0.28",
+  "description": "rpi-ws281x updated to use the serpentine matrix",
   "main": "index.js",
   "scripts": {
     "goto-github": "make goto-github",
@@ -18,7 +18,8 @@
     "ws281x",
     "neopixel",
     "neopixels",
-    "adafruit"
+    "adafruit",
+    "serpentine matrix"
   ],
   "repository": {
     "type": "git",

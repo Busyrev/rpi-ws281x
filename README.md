@@ -1,4 +1,4 @@
-# rpi-ws281x
+# rpi-ws281x-v2
 
 This is a npm module for connecting a Raspbery Pi to Neopixel strips. It uses the 
 library from **jgarff** https://github.com/jgarff/rpi_ws281x.
@@ -6,7 +6,7 @@ library from **jgarff** https://github.com/jgarff/rpi_ws281x.
 ## Installation
 
 ````bash
-$ npm install rpi-ws281x --save
+$ npm install rpi-ws281x-v2 --save
 ````
 
 
@@ -14,7 +14,7 @@ $ npm install rpi-ws281x --save
 
 ````javascript
 
-var ws281x = require('rpi-ws281x');
+var ws281x = require('rpi-ws281x-v2');
 
 // One time initialization
 ws281x.configure({leds:16});
@@ -46,7 +46,7 @@ This module is simple and only has three methods **configure()**, **render()** a
 
 ````javascript
 
-var ws281x = require('rpi-ws281x');
+var ws281x = require('rpi-ws281x-v2');
 
 class Example {
 
@@ -102,7 +102,7 @@ example.run();
 
 ````javascript
 
-var ws281x = require('rpi-ws281x');
+var ws281x = require('rpi-ws281x-v2');
 
 class Example {
 
@@ -145,7 +145,7 @@ example.run();
 
 ````javascript
 
-var ws281x = require('rpi-ws281x');
+var ws281x = require('rpi-ws281x-v2');
 
 class Example {
 
