@@ -48,6 +48,21 @@ class Module {
                         }
                     }        
                 }
+                else if (map == 'serpentine-matrix') {
+                    map = new Uint32Array(width * height);
+                    for(var i = 0; i < map.length; i++) {
+                        var row = Math.floor(i/height);
+                        var col = i % width;
+
+                        var target = i;
+
+                        if (row % 2 === 1) {
+                            target = (row * height) - i + ((row + 1) * height) - 1;
+                        }
+
+                        map[i] = target;
+                    }
+                }
             }
         }
 
