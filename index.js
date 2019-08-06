@@ -63,6 +63,22 @@ class Module {
                         map[i] = target;
                     }
                 }
+                else if (map == 'serpentine-matrix-x') {
+                    map = new Uint16Array(width*height);
+                    for(var i = 0; i < map.length; i++) {
+                        var row = Math.floor(i/height);
+                        var col = height - (i % height) - 1;
+
+                        var target = i * width;
+
+                        if (row % 2 === 1) {
+                            target = width * col + row;
+                        }
+
+
+                        map[i] = target;
+                    }
+                }
             }
         }
 
