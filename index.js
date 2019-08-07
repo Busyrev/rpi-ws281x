@@ -8,7 +8,7 @@ class Module {
     }
 
     configure(options) {
-        let {width, height, map, leds, ...options} = options;
+        var {width, height, map, leds, ...options} = options;
 
         if (width !== undefined || height !== undefined) {
 
