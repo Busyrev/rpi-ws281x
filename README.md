@@ -158,8 +158,9 @@ class Example {
 
         // By setting width and height instead of number of leds
         // you may use named pixel mappings.
-        // Currently "matrix" and "alternating-matrix" are
-        // supported. You may also set the "map" property
+        // Currently "matrix", "alternating-matrix", 
+        // "serpentine-matrix" and "canvas-matrix" are supported.
+        // You may also set the "map" property
         // to a custom Uint32Array to define your own map.
         this.config.width = 13;
         this.config.height = 13;

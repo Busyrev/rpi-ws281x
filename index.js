@@ -68,6 +68,9 @@ class Module {
 
                         if (row % 2 === 1) {
                             target = width * col + row;
+                        } else {
+                            col = (height - col) - 1;
+                            target = (col * width) + row;
                         }
 
                         map[i] = target;

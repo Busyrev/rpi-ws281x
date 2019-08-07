@@ -1,6 +1,6 @@
 {
   "name": "rpi-ws281x-v2",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "rpi-ws281x updated to use the serpentine matrix",
   "main": "index.js",
   "scripts": {
