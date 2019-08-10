@@ -1,8 +1,17 @@
-### Changelog
+# Changelog
 
-All notable changes to this project will be documented in this file. Dates are displayed in UTC.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-#### 1.3.0-rc1
+### 1.3.1 (2019-08-10)
+
+
+### Bug Fixes
+
+* module exports ([228442c](https://github.com/giacomo/rpi-ws281x/commit/228442c))
+* typo ([108d695](https://github.com/giacomo/rpi-ws281x/commit/108d695))
+* UInt32Array ([279663f](https://github.com/giacomo/rpi-ws281x/commit/279663f))
+
+#### 1.3.1-rc1
 
 > 10 August 2019
 
