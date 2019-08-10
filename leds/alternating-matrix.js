@@ -1,4 +1,4 @@
-export default class AlternatingMatrix {
+module.exports = class AlternatingMatrix {
     constructor(width, height) {
         this.width = width;
         this.height = height;
@@ -28,4 +28,4 @@ export default class AlternatingMatrix {
 
         return index <= (this.width * this.height) ? index : ((this.width * this.height) - 1);
     }
-}
+};

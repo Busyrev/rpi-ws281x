@@ -1,4 +1,4 @@
-export default class CanvasMatrix {
+module.exports = class CanvasMatrix {
     constructor(width, height) {
         this.width = width;
         this.height = height;
@@ -32,4 +32,4 @@ export default class CanvasMatrix {
 
         return index <= (this.width * this.height) ? index : ((this.width * this.height) - 1);
     }
-}
+};

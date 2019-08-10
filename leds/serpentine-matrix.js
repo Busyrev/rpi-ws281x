@@ -1,4 +1,4 @@
-export default class SerpentineMatrix {
+module.exports = class SerpentineMatrix {
     constructor(width, height) {
         this.width = width;
         this.height = height;
@@ -28,4 +28,4 @@ export default class SerpentineMatrix {
 
         return index <= (this.width * this.height) ? index : ((this.width * this.height) - 1);
     }
-}
+};

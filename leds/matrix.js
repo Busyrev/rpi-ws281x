@@ -1,4 +1,4 @@
-export default class Matrix {
+module.exports = class Matrix {
     constructor(width, height) {
         this.width = width;
         this.height = height;

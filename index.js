@@ -1,7 +1,7 @@
-import Matrix from './leds/matrix';
-import AlternatingMatrix from './leds/alternating-matrix';
-import SerpentineMatrix from './leds/serpentine-matrix';
-import CanvasMatrix from './leds/canvas-matrix';
+const Matrix = require('./leds/matrix');
+const AlternatingMatrix = require('./leds/alternating-matrix');
+const SerpentineMatrix = require('./leds/serpentine-matrix');
+const CanvasMatrix = require('./leds/canvas-matrix');
 
 let path = require("path");
 let addon = require(path.join(__dirname, "build", "Release", "rpi-ws281x.node"));
