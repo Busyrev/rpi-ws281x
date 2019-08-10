@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/giacomo/rpi-ws281x/compare/v1.3.1...v1.3.3) (2019-08-10)
+
+
+### Bug Fixes
+
+* canvas-matrix should return right coords ([fb345ab](https://github.com/giacomo/rpi-ws281x/commit/fb345ab))
+
 ### 1.3.1 (2019-08-10)
 
 
