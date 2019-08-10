@@ -21,7 +21,6 @@ export default class SerpentineMatrix {
         return map;
     }
 
-    // todo: fix this
     getByCoordinate(x, y) {
         let row = x + 1;
         let col = y + 1;

@@ -22,6 +22,10 @@ export default class AlternatingMatrix {
     }
 
     getByCoordinate(x, y) {
-        throw Error('not implemented yet');
+        let row = x + 1;
+        let col = y + 1;
+        let index = (this.height * row) - col;
+
+        return index <= (this.width * this.height) ? index : ((this.width * this.height) - 1);
     }
 }
