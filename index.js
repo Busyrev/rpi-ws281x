@@ -1,3 +1,8 @@
+import Matrix from './leds/matrix';
+import AlternatingMatrix from './leds/alternating-matrix';
+import SerpentineMatrix from './leds/serpentine-matrix';
+import CanvasMatrix from './leds/canvas-matrix';
+
 let path = require("path");
 let addon = require(path.join(__dirname, "build", "Release", "rpi-ws281x.node"));
 
@@ -5,10 +10,14 @@ class Module {
     constructor() {
         this.map = undefined;
         this.leds = undefined;
+        this.matrix = null;
     }
 
     configure(options) {
-        var {width, height, map, leds, ...options} = options;
+        const width = options.widows || undefined;
+        const height = options.height || undefined;
+        let map = options.map || undefined;
+        let leds = options.leds || undefined;
 
         if (width !== undefined || height !== undefined) {
 
@@ -28,53 +37,17 @@ class Module {
 
             if (typeof map === 'string') {
                 if (map === 'matrix') {
-                    map = new Uint32Array(width * height);
-
-                    for (let i = 0; i < map.length; i++) {
-                        map[i] = i;
-                    }
+                    this.matrix = new Matrix(width, height);
+                    map = this.matrix.getMap();
                 } else if (map === 'alternating-matrix') {
-                    map = new Uint32Array(width * height);
-
-                    for (let i = 0; i < map.length; i++) {
-                        let row = Math.floor(i / width), col = i % width;
-
-                        if ((row % 2) === 0) {
-                            map[i] = i;
-                        } else {
-                            map[i] = (row + 1) * width - (col + 1);
-                        }
-                    }
+                    this.matrix = new AlternatingMatrix(width, height);
+                    map = this.matrix.getMap();
                 } else if (map === 'serpentine-matrix') {
-                    map = new Uint32Array(width * height);
-                    for (let i = 0; i < map.length; i++) {
-                        let row = Math.floor(i / height);
-
-                        let target = i;
-
-                        if (row % 2 === 1) {
-                            target = (row * height) - i + ((row + 1) * height) - 1;
-                        }
-
-                        map[i] = target;
-                    }
+                    this.matrix = new SerpentineMatrix(width, height);
+                    map = this.matrix.getMap();
                 } else if (map === 'canvas-matrix') {
-                    map = new Uint32Array(width * height);
-                    for (let i = 0; i < map.length; i++) {
-                        let row = Math.floor(i / height);
-                        let col = height - (i % height) - 1;
-
-                        let target = i * width;
-
-                        if (row % 2 === 1) {
-                            target = width * col + row;
-                        } else {
-                            col = (height - col) - 1;
-                            target = (col * width) + row;
-                        }
-
-                        map[i] = target;
-                    }
+                    this.matrix = new CanvasMatrix(width, height);
+                    map = this.matrix.getMap();
                 }
             }
         }
@@ -104,6 +77,10 @@ class Module {
         this.leds = leds;
 
         addon.configure({...options, leds: leds});
+    }
+
+    getPixel(x, y) {
+        return this.matrix.getByCoordinate(x, y);
     }
 
     reset() {

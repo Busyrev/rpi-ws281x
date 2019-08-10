@@ -1,6 +1,6 @@
 {
   "name": "rpi-ws281x-v2",
-  "version": "1.2.1",
+  "version": "1.3.0-rc1",
   "description": "rpi-ws281x updated to use the serpentine matrix",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,10 @@
     "git-pull": "make git-pull",
     "git-commit": "make git-commit",
     "git-revert": "make git-revert",
-    "npm-publish": "make npm-publish"
-
+    "npm-publish": "make npm-publish",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "keywords": [
     "ws2811",
@@ -32,6 +34,13 @@
   },
   "dependencies": {
     "nan": "^2.14.0"
-  },  
-  "homepage": "https://github.com/giacomo/rpi-ws281x#readme"
+  },
+  "homepage": "https://github.com/giacomo/rpi-ws281x#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "auto-changelog": "^1.14.1",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
+  }
 }
