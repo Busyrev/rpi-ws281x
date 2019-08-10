@@ -14,7 +14,7 @@ class Module {
     }
 
     configure(options) {
-        const width = options.widows || undefined;
+        const width = options.width || undefined;
         const height = options.height || undefined;
         let map = options.map || undefined;
         let leds = options.leds || undefined;
