@@ -30,20 +30,20 @@ test('should create a correct map', () => {
 test('should retrieve the right pixel', () => {
     const matrix = new CanvasMatrix(4, 4);
 
-    expect(matrix.getByCoordinate(0, 0)).toBe(12);
-    expect(matrix.getByCoordinate(0, 1)).toBe(8);
-    expect(matrix.getByCoordinate(0, 2)).toBe(4);
-    expect(matrix.getByCoordinate(0, 3)).toBe(0);
-    expect(matrix.getByCoordinate(1, 0)).toBe(13);
-    expect(matrix.getByCoordinate(1, 1)).toBe(9);
-    expect(matrix.getByCoordinate(1, 2)).toBe(5);
-    expect(matrix.getByCoordinate(1, 3)).toBe(1);
-    expect(matrix.getByCoordinate(2, 0)).toBe(14);
-    expect(matrix.getByCoordinate(2, 1)).toBe(10);
-    expect(matrix.getByCoordinate(2, 2)).toBe(6);
-    expect(matrix.getByCoordinate(2, 3)).toBe(2);
-    expect(matrix.getByCoordinate(3, 0)).toBe(15);
-    expect(matrix.getByCoordinate(3, 1)).toBe(11);
-    expect(matrix.getByCoordinate(3, 2)).toBe(7);
-    expect(matrix.getByCoordinate(3, 3)).toBe(3);
+    expect(matrix.getByCoordinate(0, 0)).toBe(0);
+    expect(matrix.getByCoordinate(0, 1)).toBe(1);
+    expect(matrix.getByCoordinate(0, 2)).toBe(2);
+    expect(matrix.getByCoordinate(0, 3)).toBe(3);
+    expect(matrix.getByCoordinate(1, 0)).toBe(4);
+    expect(matrix.getByCoordinate(1, 1)).toBe(5);
+    expect(matrix.getByCoordinate(1, 2)).toBe(6);
+    expect(matrix.getByCoordinate(1, 3)).toBe(7);
+    expect(matrix.getByCoordinate(2, 0)).toBe(8);
+    expect(matrix.getByCoordinate(2, 1)).toBe(9);
+    expect(matrix.getByCoordinate(2, 2)).toBe(10);
+    expect(matrix.getByCoordinate(2, 3)).toBe(11);
+    expect(matrix.getByCoordinate(3, 0)).toBe(12);
+    expect(matrix.getByCoordinate(3, 1)).toBe(13);
+    expect(matrix.getByCoordinate(3, 2)).toBe(14);
+    expect(matrix.getByCoordinate(3, 3)).toBe(15);
 });
