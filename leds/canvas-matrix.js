@@ -28,7 +28,7 @@ module.exports = class CanvasMatrix {
     getByCoordinate(x, y) {
         let row = x;
         let col = y;
-        let index = ((this.width * row) + col);
+        let index = ((this.width * col) + row);
 
         return index <= (this.width * this.height) ? index : ((this.width * this.height) - 1);
     }
