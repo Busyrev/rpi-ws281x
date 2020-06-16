@@ -40,5 +40,5 @@ class Rainbow {
     }
 }
 
-let example = new Example();
+let example = new Rainbow();
 example.run();
