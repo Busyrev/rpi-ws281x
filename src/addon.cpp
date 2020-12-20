@@ -135,6 +135,21 @@ NAN_METHOD(Addon::configure)
 
         }
     }
+	
+///////////////////////////////////////////////////////////////////////////
+    // invert
+    if (true) {
+        v8::Local<v8::Value> invert = options->Get(Nan::New<v8::String>("invert").ToLocalChecked());
+
+        if (!stripType->IsUndefined()) {
+            v8::String::Utf8Value value(invert->ToString());
+            string invertValue = string(*value);        
+
+            if (invertValue == "true") {
+                ws2811.channel[0].invert = 1;
+            }
+        }
+    }
 
     if (ws2811_init(&ws2811)) {
         return Nan::ThrowError("configure(): ws2811_init() failed.");
