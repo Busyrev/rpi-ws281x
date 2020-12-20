@@ -42,7 +42,7 @@ NAN_METHOD(Addon::configure)
 
     ws2811.channel[0].gpionum = DEFAULT_GPIO_PIN;
     ws2811.channel[0].count = 0;
-    ws2811.channel[0].invert = 0;
+    ws2811.channel[0].invert = 1;
     ws2811.channel[0].brightness = 255;
     ws2811.channel[0].strip_type = DEFAULT_STRIP_TYPE;
     ws2811.channel[0].gamma = gammaCorrection;
@@ -133,21 +133,6 @@ NAN_METHOD(Addon::configure)
                 ws2811.channel[0].strip_type = WS2811_STRIP_BGR;
             }
 
-        }
-    }
-	
-///////////////////////////////////////////////////////////////////////////
-    // invert
-    if (true) {
-        v8::Local<v8::Value> invert = options->Get(Nan::New<v8::String>("invert").ToLocalChecked());
-
-        if (!stripType->IsUndefined()) {
-            v8::String::Utf8Value value(invert->ToString());
-            string invertValue = string(*value);        
-
-            if (invertValue == "true") {
-                ws2811.channel[0].invert = 1;
-            }
         }
     }
 
